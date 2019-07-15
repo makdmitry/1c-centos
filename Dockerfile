@@ -23,4 +23,11 @@ VOLUME /var/log/1C
 
 EXPOSE 1540-1541 1560-1591
 
-ENTRYPOINT ["/opt/1C/v8.3/x86_64/ragent"]
+RUN useradd onec
+RUN chown onec:onec /opt/1C
+RUN chmod -R 777 /opt/1C
+RUN export PATH=/opt/1C/v8.3/x86_64:$PATH
+
+USER onec
+
+CMD ["/opt/1C/v8.3/x86_64/ragent"]
