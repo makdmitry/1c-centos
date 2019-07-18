@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build --tag grahovsky/1c-centos7 .
+docker build --tag grahovsky/onec-centos7 .
