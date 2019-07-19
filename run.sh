@@ -1,13 +1,15 @@
 #!/bin/sh
 docker run --name onec-centos7 \
+  -it \
   --detach \
   --net my_app_net \
+  --user root \
   -p 1540-1541:1540-1541 \
   -p 1560-1591:1560-1591 \
   -p 1545:1545 \
   --privileged \
-  --volume c:/docker/data/1c-server-home:/home/usr1cv8 \
-  --volume c:/docker/data/1c-server-logs:/var/log/1C \
+  --volume 1c-server-home:/home/usr1cv8 \
+  --volume 1c-server-logs:/var/log/1C \
   grahovsky/onec-centos7
 
 #--net host \
