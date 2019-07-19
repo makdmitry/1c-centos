@@ -43,4 +43,4 @@ RUN echo 'root' | passwd root --stdin
 #ENTRYPOINT ["/bin/bash"]
 #ENTRYPOINT /opt/1C/v8.3/x86_64/ragent -daemon -port 2540 -regport 2541 -range 2560:2591
 #ENTRYPOINT ["/opt/1C/v8.3/x86_64/ragent /daemon /port 2540 /regport 2541 /range 2560:2591"]
-ENTRYPOINT ["ragent /daemon"]
+CMD [ "/bin/bash", "/opt/1C/v8.3/x86_64/ragent"]
